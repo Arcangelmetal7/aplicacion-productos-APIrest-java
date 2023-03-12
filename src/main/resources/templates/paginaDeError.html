@@ -1,0 +1,25 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head >
+        
+         <link th:href="@{/vendor/twitter-bootstrap/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+       
+        <title>Hubo un error</title>
+       
+    </head>
+    <body>
+       <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1 class="text-danger">Se produjo un error </h1><br>
+                    <h2 >Puede que el producto no exista o introdujo mal el numero de id.</h2>
+                    <p>Para volver al listado haz click<a class="btn btn-primary" th:href="@{/productos}">ac&aacute;</a></p>
+
+            </div>
+        </div>
+    </div>
+    
+    
+
+    </body>
+</html>

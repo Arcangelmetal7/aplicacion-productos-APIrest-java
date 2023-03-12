@@ -1,0 +1,32 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <link th:href="@{/vendor/twitter-bootstrap/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+
+        <title>Encontrar por nombre</title>
+       
+          
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                
+                     <h1 class="text-warning">Ingrese nombre</h1>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                
+                    <form action="/encontrarPorNombreProducto/{nombre}" th:object="${producto}" method="get">
+                        <input type="text" th:field="*{nombre}"  name="nombre"  placeholder="Ingrese nombre"/><!-- comment -->
+                        <input class="btn btn-success" type="submit" value="buscar"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        
+    </body>
+</html>

@@ -1,0 +1,42 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        
+         <link th:href="@{/vendor/twitter-bootstrap/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+
+        <title>TODO supply a title</title>
+       
+       
+    </head>
+    <body>
+       <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Precio</th>
+                                <th>Pais</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <th:block th:each="producto : ${productos}" th:classappend="${producto.enStock}? table-success:table-danger">
+                                <tr>
+                                    <td th:text="${producto.id}"></td>
+                                    <td th:text="${producto.nombre}"></td>
+                                    <td th:text="${producto.precio}"></td>
+                                    <td th:text="${producto.paisOrigen}"></td>
+                                    <td>
+                                    	<a th:href="@{/insertarProducto/{id}(id=${producto.id})}" class="btn btn-warning">Modificar</a>
+                                 	    <a th:href="@{/eliminarProducto/{id}(id=${producto.id})}" class="btn btn-danger" onclick="ventana()">Borrar</a>
+                                    </td>
+                                </tr>
+                            </th:block>
+                        </tbody>
+                    </table>
+        <p>Para volver al listado haz click<a class="btn btn-success" th:href="@{/productos}">ac&aacute;</a></p>
+   
+     <script th:src="@{/js/ventana.js}"></script>
+    
+    </body>
+</html>
