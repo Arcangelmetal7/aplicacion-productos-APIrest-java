@@ -7,17 +7,19 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.springboot.app1.domains.Producto;
 import com.springboot.app1.repositories.ProductoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Service
 @Transactional
 public class ProductoService {
 
+         @Autowired
 	private ProductoRepository productoRepository;
 
-	public ProductoService(ProductoRepository productoRepository) {
+	/*public ProductoService(ProductoRepository productoRepository) {
 		super();
 		this.productoRepository = productoRepository;
-	}
+	}*/
 
 	public List<Producto> buscarTodos() {
 		return productoRepository.findAll();

@@ -23,6 +23,8 @@
                                 <th>Nombre</th>
                                 <th>Precio</th>
                                 <th>Pais</th>
+                                <th>Fecha</th>
+                                <th>Sector</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -33,6 +35,8 @@
                                     <td th:text="${producto.nombre}"></td>
                                     <td th:text="${producto.precio}"></td>
                                     <td th:text="${producto.paisOrigen}"></td>
+                                    <td th:text="${producto.fecha}"></td>
+                                    <td th:text="${producto.sector.nombre}"></td>
                                     <td>
                                     	<a th:href="@{/insertarProducto/{id}(id=${producto.id})}" class="btn btn-warning">Modificar</a>
                                         <a th:href="@{/eliminarProducto/{id}(id=${producto.id})}" class="btn btn-danger" onclick="ventana()" >Borrar</a>
@@ -68,6 +72,7 @@
                 </div>
             </div>
         </div>
+        <img src="bici33.jpg"/>
         
          <!-- Lib JS -->
         <script th:src="@{/vendor/jquery/jquery.min.js}"></script>
